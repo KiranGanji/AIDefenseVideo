@@ -1,0 +1,244 @@
+
+<style>
+  * { box-sizing: border-box; }
+  .scene { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: 12px; padding: 1.25rem; margin-bottom: 1.25rem; }
+  .scene-header { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+  .badge { min-width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 500; flex-shrink: 0; }
+  .scene-title { font-size: 15px; font-weight: 500; color: var(--color-text-primary); margin: 0 0 2px; }
+  .scene-time { font-size: 12px; color: var(--color-text-tertiary); }
+  .module-pill { display: inline-block; font-size: 11px; font-weight: 500; padding: 2px 9px; border-radius: 20px; margin-bottom: 10px; }
+  .sec-label { font-size: 10px; font-weight: 500; letter-spacing: .07em; text-transform: uppercase; color: var(--color-text-tertiary); margin: 12px 0 4px; }
+  .sec-body { font-size: 13px; color: var(--color-text-secondary); line-height: 1.65; margin: 0; }
+  .prompt-box { background: var(--color-background-secondary); border-radius: 8px; padding: 14px 16px; margin-top: 10px; font-size: 12.5px; line-height: 1.7; color: var(--color-text-primary); font-family: var(--font-mono, monospace); border-left: 2px solid #378ADD; }
+  .prompt-label { font-size: 10px; font-weight: 500; letter-spacing: .07em; text-transform: uppercase; color: #185FA5; margin: 0 0 6px; font-family: var(--font-sans); }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+  .chip { font-size: 11px; padding: 3px 9px; border-radius: 5px; font-weight: 500; }
+  .chip-stat { background: #F1EFE8; color: #444441; }
+  .chip-red { background: #FCEBEB; color: #A32D2D; }
+  .chip-blue { background: #E6F1FB; color: #0C447C; }
+  .chip-green { background: #EAF3DE; color: #27500A; }
+  .chip-amber { background: #FAEEDA; color: #633806; }
+  .chip-purple { background: #EEEDFE; color: #3C3489; }
+  .chip-teal { background: #E1F5EE; color: #085041; }
+  .divider { border: none; border-top: 0.5px solid var(--color-border-tertiary); margin: 12px 0; }
+  .anim-row { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 8px; }
+  .anim-tag { font-size: 11px; padding: 2px 8px; border-radius: 4px; }
+  .runtime-bar { display: flex; gap: 4px; margin-bottom: 1.5rem; align-items: stretch; }
+  .rt-seg { border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 500; padding: 5px 4px; text-align: center; min-width: 0; overflow: hidden; }
+  .copy-btn { float: right; font-size: 11px; padding: 2px 8px; border: 0.5px solid var(--color-border-secondary); border-radius: 4px; cursor: pointer; background: var(--color-background-primary); color: var(--color-text-secondary); font-family: var(--font-sans); }
+  .copy-btn:hover { background: var(--color-background-secondary); }
+</style>
+
+<div style="padding: 0.25rem 0 0.5rem;">
+
+<div style="font-size: 12px; color: var(--color-text-secondary); margin-bottom: 14px;">7 scenes · ~3.5 min · animated explainer format</div>
+
+<div class="runtime-bar">
+  <div class="rt-seg" style="flex:2.2;background:#FCEBEB;color:#A32D2D;">S1<br>0:22</div>
+  <div class="rt-seg" style="flex:2.3;background:#E6F1FB;color:#0C447C;">S2<br>0:23</div>
+  <div class="rt-seg" style="flex:3;background:#EAF3DE;color:#27500A;">S3<br>0:30</div>
+  <div class="rt-seg" style="flex:2.5;background:#FAEEDA;color:#633806;">S4<br>0:25</div>
+  <div class="rt-seg" style="flex:2.5;background:#EEEDFE;color:#3C3489;">S5<br>0:25</div>
+  <div class="rt-seg" style="flex:3;background:#E1F5EE;color:#085041;">S6<br>0:30</div>
+  <div class="rt-seg" style="flex:3.5;background:#F1EFE8;color:#444441;">S7<br>0:35</div>
+</div>
+
+<!-- SCENE 1 -->
+<div class="scene">
+  <div class="scene-header">
+    <div class="badge" style="background:#FCEBEB;color:#A32D2D;">1</div>
+    <div><p class="scene-title">The threat — opening hook</p><p class="scene-time">0:00 – 0:22 · 22 sec</p></div>
+  </div>
+  <div class="module-pill" style="background:#FCEBEB;color:#A32D2D;">Problem framing</div>
+  <p class="sec-label">Scene description</p>
+  <p class="sec-body">A single provider node glows on a dark canvas, then rapidly clones and connects — building a sprawling network of billing entities, payers, and AI-optimized claims. Lines pulse with data. The word "Structural" assembles letter-by-letter as the network fills the screen.</p>
+  <div class="anim-row">
+    <span class="anim-tag" style="background:#FCEBEB;color:#A32D2D;">Node multiplication</span>
+    <span class="anim-tag" style="background:#FCEBEB;color:#A32D2D;">Pulsing edge lines</span>
+    <span class="anim-tag" style="background:#FCEBEB;color:#A32D2D;">Kinetic typography</span>
+  </div>
+  <div class="divider"></div>
+  <div class="prompt-label">Video generation prompt</div>
+  <div class="prompt-box">
+    <button class="copy-btn" onclick="navigator.clipboard.writeText(this.parentElement.innerText.replace('Video generation prompt','').trim())">Copy</button>
+    Animated explainer video, dark navy background. A single glowing white node appears at center. Over 4 seconds it multiplies — spawning dozens of connected nodes across the frame, connected by thin electric-blue lines that pulse with moving data packets. The network grows organically to fill the screen, evoking a sprawling fraudulent billing ecosystem. Simultaneously, bold white sans-serif text fades in word-by-word: "The threat is no longer isolated. It is structural." Text uses a clean modern typeface, large and centered. Color palette: deep navy #0A0E1A, electric blue #378ADD, white text, subtle red pulses #E24B4A on anomalous nodes. Motion style: smooth easing, particle trails on moving data, slight camera drift inward. No voiceover gap — continuous build. Duration: 22 seconds. Style: 2D motion graphics, flat design, animated explainer.
+  </div>
+  <div class="chips">
+    <span class="chip chip-red">Tone: alarming</span>
+    <span class="chip chip-stat">Dark palette</span>
+    <span class="chip chip-stat">No data stats shown yet</span>
+  </div>
+</div>
+
+<!-- SCENE 2 -->
+<div class="scene">
+  <div class="scene-header">
+    <div class="badge" style="background:#E6F1FB;color:#0C447C;">2</div>
+    <div><p class="scene-title">AI Defense — solution architecture</p><p class="scene-time">0:22 – 0:45 · 23 sec</p></div>
+  </div>
+  <div class="module-pill" style="background:#E6F1FB;color:#0C447C;">Architecture reveal</div>
+  <p class="sec-label">Scene description</p>
+  <p class="sec-body">Hard cut to white/light background — visual contrast signals "our answer." Four pillars animate up from bottom: Policy & Benefit, Claims, Network, Clinical. Each tile locks into place with a satisfying snap. A central "Agentic Orchestration" hub connects all four with glowing arcs, completing a circuit. Keywords appear: Modular · Auditable · Secure.</p>
+  <div class="anim-row">
+    <span class="anim-tag" style="background:#E6F1FB;color:#0C447C;">Pillar slide-up reveal</span>
+    <span class="anim-tag" style="background:#E6F1FB;color:#0C447C;">Arc connection animation</span>
+    <span class="anim-tag" style="background:#E6F1FB;color:#0C447C;">Keyword appear</span>
+  </div>
+  <div class="divider"></div>
+  <div class="prompt-label">Video generation prompt</div>
+  <div class="prompt-box">
+    <button class="copy-btn" onclick="navigator.clipboard.writeText(this.parentElement.innerText.replace('Video generation prompt','').trim())">Copy</button>
+    Animated explainer video, clean white background, hard cut from previous dark scene. Four rectangular module tiles slide up from the bottom one by one with slight bounce easing, each labeled: "Policy & Benefit Intelligence," "Claims Intelligence," "Network Intelligence," "Clinical Intelligence." Each tile is a flat card in deep blue (#185FA5) with white text. After all four lock in place, a central circular hub labeled "Agentic Orchestration" materializes in the middle, connected to each tile by animated arc lines that draw outward like a circuit completing. The arcs glow briefly then settle. Three keywords fade in beneath: "Modular · Auditable · Secure" in muted gray. Voiceover: "AI Defense is our response — a modular capability suite built across four intelligences." Duration: 23 seconds. Style: 2D flat motion graphics, corporate animated explainer, clean and confident.
+  </div>
+  <div class="chips">
+    <span class="chip chip-blue">Tone: confident</span>
+    <span class="chip chip-stat">White bg — contrast with Scene 1</span>
+    <span class="chip chip-blue">4 pillars + orchestration hub</span>
+  </div>
+</div>
+
+<!-- SCENE 3 -->
+<div class="scene">
+  <div class="scene-header">
+    <div class="badge" style="background:#EAF3DE;color:#27500A;">3</div>
+    <div><p class="scene-title">Impact Radar — ER-to-inpatient fraud</p><p class="scene-time">0:45 – 1:15 · 30 sec</p></div>
+  </div>
+  <div class="module-pill" style="background:#EAF3DE;color:#27500A;">Impact Radar</div>
+  <p class="sec-label">Scene description</p>
+  <p class="sec-body">A scatter plot animates in — hundreds of gray peer provider dots appear. Then 9 red dots emerge and float upward dramatically above the cluster, with a callout: "3.5× – 6× higher conversion rate." Cut to an ER icon transforming into a hospital bed (ER → Inpatient funnel). A bar comparison shows severity vs actual admission rate. Counter ticks to $2.1M.</p>
+  <div class="anim-row">
+    <span class="anim-tag" style="background:#EAF3DE;color:#27500A;">Scatter plot outlier reveal</span>
+    <span class="anim-tag" style="background:#EAF3DE;color:#27500A;">ER→inpatient icon morph</span>
+    <span class="anim-tag" style="background:#EAF3DE;color:#27500A;">Dollar counter tick-up</span>
+  </div>
+  <div class="divider"></div>
+  <div class="prompt-label">Video generation prompt</div>
+  <div class="prompt-box">
+    <button class="copy-btn" onclick="navigator.clipboard.writeText(this.parentElement.innerText.replace('Video generation prompt','').trim())">Copy</button>
+    Animated explainer video, white background. Scene opens with a scatter plot building on screen — hundreds of small gray circular dots appear, representing peer providers, clustering in a band. Then 9 bright red dots animate in and slowly float upward, separating dramatically from the gray cluster. A red callout annotation draws in: "3.5× – 6× above peers." Cut to a simple icon animation: a red-cross ER symbol morphs and transitions into a hospital bed icon with an upward arrow, illustrating ER visits being converted to inpatient stays. A horizontal bar chart appears comparing two bars — "Expected admission rate" (short, gray) vs "Actual admission rate" (tall, red, labeled 94% for one provider). Text overlay: "68,000 claims analyzed · 9 billing entities flagged." A bold green counter animates upward from $0 to $2,100,000 with a dollar sign prefix. Voiceover: "Nine billing entities with ER-to-inpatient conversion rates 3.5 to 6 times above peers." Duration: 30 seconds. Style: 2D flat animated explainer, data-driven storytelling, clean chart animations.
+  </div>
+  <div class="chips">
+    <span class="chip chip-stat">68K claims</span>
+    <span class="chip chip-red">9 flagged entities</span>
+    <span class="chip chip-green">$2.1M exposure</span>
+  </div>
+</div>
+
+<!-- SCENE 4 -->
+<div class="scene">
+  <div class="scene-header">
+    <div class="badge" style="background:#FAEEDA;color:#633806;">4</div>
+    <div><p class="scene-title">Adversarial Claim Simulator — modifier unbundling</p><p class="scene-time">1:15 – 1:40 · 25 sec</p></div>
+  </div>
+  <div class="module-pill" style="background:#FAEEDA;color:#633806;">Adversarial Claim Simulator</div>
+  <p class="sec-label">Scene description</p>
+  <p class="sec-body">A single claim line appears on screen, clean and simple. Then it begins to "split" — modifier codes attach like parasites, and the one claim fractures into 4–5 separate reimbursement lines, each triggering a payment. A speedometer gauge animates, needle sweeping from the gray peer zone (under 5%) into the red zone (35–89%). Counter ticks to $1.8M.</p>
+  <div class="anim-row">
+    <span class="anim-tag" style="background:#FAEEDA;color:#633806;">Claim unbundling split animation</span>
+    <span class="anim-tag" style="background:#FAEEDA;color:#633806;">Modifier code attach effect</span>
+    <span class="anim-tag" style="background:#FAEEDA;color:#633806;">Gauge needle sweep</span>
+    <span class="anim-tag" style="background:#FAEEDA;color:#633806;">$1.8M counter</span>
+  </div>
+  <div class="divider"></div>
+  <div class="prompt-label">Video generation prompt</div>
+  <div class="prompt-box">
+    <button class="copy-btn" onclick="navigator.clipboard.writeText(this.parentElement.innerText.replace('Video generation prompt','').trim())">Copy</button>
+    Animated explainer video, white background. Scene opens with a single clean medical claim row on screen — a simple horizontal card labeled "Lab test: base code" with a small payment amount on the right. Then small red modifier code tags ("Mod 59," "XU," "XS") fly in and latch onto the claim row like attachments. The single claim row then splits and fractures into 4 separate reimbursement rows, each with its own payment — total reimbursement multiplying visibly. Coins or dollar signs animate out from each row. Cut to a half-circle speedometer gauge: the needle starts in a gray "Normal" zone labeled "Peer median: under 5%" then dramatically sweeps into a red danger zone labeled "35% – 89%." A callout appears: "All 5 providers exceed the 99th percentile." Text overlay: "43,000 claim lines · same date, same patient, same encounter." Bold amber counter animates: $0 → $1,800,000. Voiceover: "Five lab providers using modifiers to systematically unbundle claims at rates up to 89 percent." Duration: 25 seconds. Style: 2D flat animated explainer, clear cause-and-effect motion, financial fraud visualization.
+  </div>
+  <div class="chips">
+    <span class="chip chip-stat">43K claim lines</span>
+    <span class="chip chip-red">5 lab providers</span>
+    <span class="chip chip-amber">$1.8M exposure</span>
+    <span class="chip chip-red">99th percentile outliers</span>
+  </div>
+</div>
+
+<!-- SCENE 5 -->
+<div class="scene">
+  <div class="scene-header">
+    <div class="badge" style="background:#EEEDFE;color:#3C3489;">5</div>
+    <div><p class="scene-title">Retro AI Editing — policy drift recovery</p><p class="scene-time">1:40 – 2:05 · 25 sec</p></div>
+  </div>
+  <div class="module-pill" style="background:#EEEDFE;color:#3C3489;">Retro AI Editing</div>
+  <p class="sec-label">Scene description</p>
+  <p class="sec-body">A policy document animates in, stamped "Effective Oct 2019 — Consultation codes: NOT REIMBURSABLE." A stream of claims flows toward a gate that should say DENY — but the gate is green and open. Claims pass through with checkmarks. A glitch/error effect fires. Then 3,900 claim lines appear as a flowing river of cards, all incorrectly paid. Counter: $1.1M recovery opportunity.</p>
+  <div class="anim-row">
+    <span class="anim-tag" style="background:#EEEDFE;color:#3C3489;">Policy doc stamp animation</span>
+    <span class="anim-tag" style="background:#EEEDFE;color:#3C3489;">Gate should-deny-but-passes effect</span>
+    <span class="anim-tag" style="background:#EEEDFE;color:#3C3489;">Glitch/error visual</span>
+    <span class="anim-tag" style="background:#EEEDFE;color:#3C3489;">$1.1M recovery counter</span>
+  </div>
+  <div class="divider"></div>
+  <div class="prompt-label">Video generation prompt</div>
+  <div class="prompt-box">
+    <button class="copy-btn" onclick="navigator.clipboard.writeText(this.parentElement.innerText.replace('Video generation prompt','').trim())">Copy</button>
+    Animated explainer video, white background. Scene opens with a policy document sliding in from the left — a clean illustrated document icon. A red official stamp animates onto it reading "Consultation CPT codes — NOT REIMBURSABLE · Effective October 2019." The document glows briefly to signal importance. Then a stream of small claim cards flows rightward across the screen toward a checkpoint gate. The gate has a red "DENY" label — but the gate swings open and turns green. The claim cards pass through with green checkmarks, incorrectly approved. A warning glitch effect (brief screen shake, red flash, diagonal error lines) signals this is wrong. Text overlay appears: "3,900 claim lines paid in 2025 — policy in effect since 2019." The flow of cards piles up on the right, stacking visually to represent the volume. A purple counter animates: $0 → $1,100,000 labeled "Recovery opportunity." Voiceover: "Consultation codes banned since 2019 — still flowing through and being paid in 2025." Duration: 25 seconds. Style: 2D flat animated explainer, policy violation storytelling, clear before/after contrast.
+  </div>
+  <div class="chips">
+    <span class="chip chip-stat">3,900 claim lines</span>
+    <span class="chip chip-red">Policy active since 2019</span>
+    <span class="chip chip-purple">$1.1M recovery</span>
+  </div>
+</div>
+
+<!-- SCENE 6 -->
+<div class="scene">
+  <div class="scene-header">
+    <div class="badge" style="background:#E1F5EE;color:#085041;">6</div>
+    <div><p class="scene-title">Third Party Graph — utilization abuse network</p><p class="scene-time">2:05 – 2:35 · 30 sec</p></div>
+  </div>
+  <div class="module-pill" style="background:#E1F5EE;color:#085041;">Third Party Graph</div>
+  <p class="sec-label">Scene description</p>
+  <p class="sec-body">A US map fades in. Dots appear across 17 states, then connect with thin lines that glow, forming a suspicious web. A member-level timeline shows: same patient, 7 injection claims across months. A bar chart compares 7 injections/year vs national norm of ~2. The web pulses to signal coordination. Counter: $1.1M. Text: "This is a utilization abuse signal."</p>
+  <div class="anim-row">
+    <span class="anim-tag" style="background:#E1F5EE;color:#085041;">US map dot reveal</span>
+    <span class="anim-tag" style="background:#E1F5EE;color:#085041;">Network connection web</span>
+    <span class="anim-tag" style="background:#E1F5EE;color:#085041;">Member timeline animation</span>
+    <span class="anim-tag" style="background:#E1F5EE;color:#085041;">Injection frequency bar chart</span>
+  </div>
+  <div class="divider"></div>
+  <div class="prompt-label">Video generation prompt</div>
+  <div class="prompt-box">
+    <button class="copy-btn" onclick="navigator.clipboard.writeText(this.parentElement.innerText.replace('Video generation prompt','').trim())">Copy</button>
+    Animated explainer video, white background. A clean flat illustrated map of the United States fades in. Small red location pin dots appear one by one across 17 different states. Then thin red lines animate between the dots, connecting them into a network web that suggests coordination, not coincidence. The web pulses gently. A zoom-in transition focuses on one member's timeline — a horizontal timeline bar appears with 7 injection claim icons spaced across 12 months, showing repeated procedures on the same patient. Cut to a side-by-side bar chart: left bar labeled "National average" shows 2 injections per year (short, gray). Right bar labeled "Flagged members" animates upward to 7 (tall, red), labeled "3× national norm." Text overlay: "22 providers · 17 states · pain medicine, anesthesiology, neurology." A teal counter animates: $0 → $1,100,000. Final text fades in: "Not a billing error — a utilization abuse signal." Duration: 30 seconds. Style: 2D flat animated explainer, geographic data storytelling, network visualization.
+  </div>
+  <div class="chips">
+    <span class="chip chip-stat">22 providers · 17 states</span>
+    <span class="chip chip-red">7× injection avg</span>
+    <span class="chip chip-teal">$1.1M exposure</span>
+  </div>
+</div>
+
+<!-- SCENE 7 -->
+<div class="scene">
+  <div class="scene-header">
+    <div class="badge" style="background:#F1EFE8;color:#444441;">7</div>
+    <div><p class="scene-title">The payoff — $6.1M and growing</p><p class="scene-time">2:35 – 3:10 · 35 sec</p></div>
+  </div>
+  <div class="module-pill" style="background:#F1EFE8;color:#444441;">Closing impact</div>
+  <p class="sec-label">Scene description</p>
+  <p class="sec-body">The 4 module tiles from Scene 2 return, each now lighting up with its dollar figure stacking sequentially: $2.1M → $1.8M → $1.1M → $1.1M. A running total counter assembles to $6.1M+. The architecture diagram pulses. Closing title: "Detect earlier. Reason deeper. Act faster." Brand lockup fades in.</p>
+  <div class="anim-row">
+    <span class="anim-tag" style="background:#F1EFE8;color:#444441;">Module re-reveal with amounts</span>
+    <span class="anim-tag" style="background:#F1EFE8;color:#444441;">Stacking dollar counter</span>
+    <span class="anim-tag" style="background:#F1EFE8;color:#444441;">Architecture pulse</span>
+    <span class="anim-tag" style="background:#F1EFE8;color:#444441;">Closing title card</span>
+  </div>
+  <div class="divider"></div>
+  <div class="prompt-label">Video generation prompt</div>
+  <div class="prompt-box">
+    <button class="copy-btn" onclick="navigator.clipboard.writeText(this.parentElement.innerText.replace('Video generation prompt','').trim())">Copy</button>
+    Animated explainer video, clean white background. The four AI Defense module tiles from the introduction reappear on screen — "Impact Radar," "Adversarial Claim Simulator," "Retro AI Editing," "Third Party Graph." Each tile lights up sequentially with a bright glow and its exposure dollar amount animates in below it: $2.1M, then $1.8M, then $1.1M, then $1.1M. As each amount appears, it flows visually toward a central large counter. The central counter assembles: "$6,100,000+" in large bold text, then pulses once to emphasize the total. The Agentic Orchestration hub at center glows and pulses outward, connecting all four modules in a final circuit animation. Cut to a dark navy background. Three lines of bold white text appear one by one with clean fade-ins: "Detect earlier." then "Reason deeper." then "Act faster." Hold for 3 seconds. Brand logo or product name fades in at bottom. Duration: 35 seconds. Style: 2D flat animated explainer, triumphant closing, cinematic typography, corporate motion graphics.
+  </div>
+  <div class="chips">
+    <span class="chip chip-stat">Total: $6.1M+</span>
+    <span class="chip chip-stat">Tone: triumphant</span>
+    <span class="chip chip-blue">Closing brand moment</span>
+  </div>
+</div>
+
+<div style="background:var(--color-background-secondary);border-radius:8px;padding:12px 16px;font-size:12px;color:var(--color-text-secondary);line-height:1.6;">
+  Recommended tools: <strong style="color:var(--color-text-primary);">Runway Gen-3, Kling, or Pika</strong> for video generation from these prompts · <strong style="color:var(--color-text-primary);">After Effects + Motion Array</strong> for custom data viz scenes · <strong style="color:var(--color-text-primary);">Flourish</strong> for chart animations (Scenes 3, 4, 6)
+</div>
+
+</div>

@@ -1,0 +1,19 @@
+{
+  "name": "semantic-layer-video",
+  "version": "1.0.0",
+  "description": "AI Semantic Layer Architecture Animation",
+  "main": "src/index.jsx",
+  "scripts": {
+    "start": "npx remotion studio src/index.jsx",
+    "render": "npx remotion render src/index.jsx SemanticLayerVideo out/video.mp4"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@remotion/cli": "^4.0.441",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "remotion": "^4.0.441"
+  }
+}

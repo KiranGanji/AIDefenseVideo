@@ -1,0 +1,20 @@
+
+The threat is no longer isolated. It is structural. Providers and revenue cycle partners are using AI to reverse engineer payer policies and optimize coding at scale - driving higher medical cost and lower affordability.
+
+AI Defense is our response: a modular capability suite built across Policy and Benefit, Claims, Network, and Clinical Intelligences, along with state of art Agentic Orchestration — all connected through a modular architecture designed for secure, auditable execution.
+
+Across the portfolio, we have already identified over 20 million dollars in combined exposure opportunity — and that number is growing as each module matures.
+
+Impact Radar benchmarks providers against true peer cohorts to detect abnormal coding and utilization shifts.
+We identified nine billing entities whose ER-to-inpatient conversion rates were three-and-a-half to six times higher than comparable peers. Most inpatient stays were only one to three days, yet one provider had ninety-four percent of allowed spend in inpatient services. Across sixty-eight thousand claims, that is roughly two-point-one million dollars in exposure. A small set of providers systematically converting ER visits into inpatient admissions at rates patient severity alone cannot explain.
+
+Adversarial Claim Simulator thinks like a revenue optimizer — simulating reimbursement-maximizing tactics before they scale.
+It uncovered five laboratory providers using Modifier 59 and X-series modifiers at rates between thirty-five and eighty-nine percent of claim lines — versus peer medians under five percent. All five exceeded the ninety-ninth percentile. The pattern was consistent: base lab codes paired with modifier-separated add-on lines, same date, same patient, same encounter. This is not random variation — it is systematic unbundling designed to maximize reimbursement. Estimated exposure: one-point-eight million dollars across forty-three thousand claim lines.
+
+Retro AI Editing turns reimbursement policy into machine-executable logic and exposes where payments diverge from policy intent.
+It found consultation CPT codes still being submitted and paid despite a non-reimbursement policy effective since October 2019. The policy is absolute — these codes should not be reimbursed regardless of modifier or specialty. Yet in 2025, nearly four thousand claim lines flowed through, representing over one-point-one million in recovery potential. Claims passed automation but consistently violated policy intent — exactly the kind of drift AI-assisted billing optimization exploits, and exactly what this module catches.
+
+Third Party Graph connects providers, CPT patterns, geography, and clinical context — turning isolated anomalies into actionable intelligence.
+It flagged twenty-two providers across seventeen states whose spinal injection utilization far exceeded benchmarks. Their members averaged nearly seven injections per year — three times the national norm. The pattern spans pain medicine, anesthesiology, and neurology, with repeated multi-line procedures on the same members over time. Claims were largely paid with minimal denials — this is not a billing-error signal, it is a utilization-abuse signal. Estimated exposure: one-point-one million dollars.
+
+This is what makes AI Defense different. Not one model or one rule set — a coordinated defense system built to detect earlier, reason deeper, and act faster than the market evolves.
