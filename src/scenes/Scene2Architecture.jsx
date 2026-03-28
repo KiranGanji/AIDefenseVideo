@@ -11,7 +11,6 @@ const PILLARS = [
   { label: "Clinical\nIntelligence",          color: COLORS.green,  bg: COLORS.greenLight },
 ];
 
-const KEYWORDS = ["Modular", "Auditable", "Secure"];
 
 // Layout constants
 const CARD_W = 310, CARD_H = 190;
@@ -78,7 +77,7 @@ export const Scene2Architecture = ({ startFrame = 0 }) => {
 
       {/* Description */}
       <div style={{
-        position: "absolute", top: 195, left: "50%",
+        position: "absolute", top: 180, left: "50%",
         transform: "translateX(-50%)",
         textAlign: "center", opacity: descOp, width: 900,
       }}>
@@ -177,14 +176,24 @@ export const Scene2Architecture = ({ startFrame = 0 }) => {
         position: "absolute",
         top: CARD_Y + CARD_H + 52,
         left: "50%", transform: "translateX(-50%)",
-        display: "flex", gap: 40, opacity: kwOp,
+        display: "flex", gap: 40, opacity: kwOp, alignItems: "center",
       }}>
-        {KEYWORDS.map((kw, i) => (
-          <div key={kw} style={{
-            fontFamily: "'Inter', sans-serif", fontSize: 26,
-            fontWeight: 500, color: "rgba(0,0,0,0.32)", letterSpacing: 2,
-          }}>
-            {kw}{i < KEYWORDS.length - 1 ? " ·" : ""}
+        {[
+          { label: "Modular",   color: COLORS.blue },
+          { label: "Auditable", color: COLORS.teal },
+          { label: "Secure",    color: COLORS.green },
+        ].map(({ label, color }, i) => (
+          <div key={label} style={{ display: "flex", alignItems: "center", gap: 20 }}>
+            <div style={{
+              fontFamily: "'Inter', sans-serif", fontSize: 34,
+              fontWeight: 800, color, letterSpacing: 1,
+              textShadow: `0 0 24px ${color}55`,
+            }}>
+              {label}
+            </div>
+            {i < 2 && (
+              <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 34, fontWeight: 300, color: "rgba(0,0,0,0.25)" }}>·</div>
+            )}
           </div>
         ))}
       </div>
@@ -202,12 +211,10 @@ export const Scene2Architecture = ({ startFrame = 0 }) => {
           padding: "14px 36px",
           border: `2px solid ${COLORS.green}44`,
         }}>
-          <div style={{ width: 10, height: 10, borderRadius: "50%", background: COLORS.green }} />
-          <span style={{
-            fontFamily: "'Inter', sans-serif", fontSize: 22,
-            fontWeight: 700, color: COLORS.green,
-          }}>
-            $20M+ combined exposure opportunity identified across portfolio
+          <div style={{ width: 12, height: 12, borderRadius: "50%", background: COLORS.green }} />
+          <span style={{ fontFamily: "'Inter', sans-serif", fontSize: 22, fontWeight: 600, color: COLORS.green }}>
+            <span style={{ fontSize: 38, fontWeight: 900, letterSpacing: -1 }}>$20M+</span>
+            {" "}combined exposure opportunity identified across portfolio
           </span>
         </div>
       </div>

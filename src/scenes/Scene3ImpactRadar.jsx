@@ -55,7 +55,7 @@ export const Scene3ImpactRadar = ({ startFrame = 0 }) => {
   const expectedH = interp(lf, [560, 620], [0, 165]);
   const actualH   = interp(lf, [580, 660], [0, 470]);
 
-  const counterVal = interp(lf, [700, 820], [0, 2100000]);
+  const counterVal = interp(lf, [700, 745], [0, 2100000]);
   const statsOp    = interp(lf, [655, 695], [0, 1]);
 
   const SVG_H = PLOT_H - 36;
@@ -71,14 +71,15 @@ export const Scene3ImpactRadar = ({ startFrame = 0 }) => {
       </svg>
 
       {/* Module pill */}
-      <div style={{ position: "absolute", top: 42, left: 60, opacity: labelOp }}>
+      <div style={{ position: "absolute", top: 38, left: 60, opacity: labelOp }}>
         <div style={{
-          display: "inline-flex", gap: 10, alignItems: "center",
+          display: "inline-flex", gap: 12, alignItems: "center",
           background: COLORS.greenLight, borderRadius: 100,
-          padding: "8px 22px", border: `2px solid ${COLORS.green}55`,
+          padding: "14px 32px", border: `2.5px solid ${COLORS.green}`,
+          boxShadow: `0 4px 18px ${COLORS.green}33`,
         }}>
-          <div style={{ width: 10, height: 10, borderRadius: "50%", background: COLORS.green }} />
-          <span style={{ fontFamily: "'Inter', sans-serif", fontSize: 16, fontWeight: 700, color: COLORS.green }}>
+          <div style={{ width: 14, height: 14, borderRadius: "50%", background: COLORS.green }} />
+          <span style={{ fontFamily: "'Inter', sans-serif", fontSize: 24, fontWeight: 800, color: COLORS.green, letterSpacing: 0.5 }}>
             Impact Radar
           </span>
         </div>
@@ -98,21 +99,21 @@ export const Scene3ImpactRadar = ({ startFrame = 0 }) => {
       <div style={{ position: "absolute", left: PLOT_LEFT, top: PLOT_TOP, width: PLOT_W, height: PLOT_H }}>
         <div style={{
           position: "absolute", bottom: 0, left: 40, right: 0,
-          fontFamily: "'Inter', sans-serif", fontSize: 16,
-          color: "rgba(0,0,0,0.35)", textAlign: "center",
+          fontFamily: "'Inter', sans-serif", fontSize: 20,
+          fontWeight: 600, color: "rgba(0,0,0,0.72)", textAlign: "center",
         }}>Provider Cohort (Peer-Matched)</div>
 
         <div style={{
-          position: "absolute", top: "50%", left: -52,
+          position: "absolute", top: "50%", left: -60,
           transform: "translateY(-50%) rotate(-90deg)",
-          fontFamily: "'Inter', sans-serif", fontSize: 16,
-          color: "rgba(0,0,0,0.35)", whiteSpace: "nowrap",
+          fontFamily: "'Inter', sans-serif", fontSize: 20,
+          fontWeight: 600, color: "rgba(0,0,0,0.72)", whiteSpace: "nowrap",
         }}>ER→Inpatient Conversion Rate</div>
 
         <svg width={PLOT_W} height={SVG_H} style={{ overflow: "visible" }}>
           {[0.25, 0.5, 0.75].map(v => (
             <line key={v} x1={40} y1={v * SVG_H} x2={PLOT_W} y2={v * SVG_H}
-              stroke="rgba(0,0,0,0.07)" strokeWidth={1} strokeDasharray="5 4" />
+              stroke="rgba(0,0,0,0.18)" strokeWidth={1.5} strokeDasharray="5 4" />
           ))}
 
           {/* Peer cluster band */}
@@ -223,7 +224,7 @@ export const Scene3ImpactRadar = ({ startFrame = 0 }) => {
                   <span style={{ fontFamily: "'Inter', sans-serif", fontSize: 22, fontWeight: 800, color: "rgba(0,0,0,0.4)" }}>~12%</span>
                 )}
               </div>
-              <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 16, color: "rgba(0,0,0,0.4)", textAlign: "center" }}>
+              <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 18, fontWeight: 600, color: "rgba(0,0,0,0.65)", textAlign: "center" }}>
                 Expected<br />admission rate
               </div>
             </div>
@@ -239,7 +240,7 @@ export const Scene3ImpactRadar = ({ startFrame = 0 }) => {
                   <span style={{ fontFamily: "'Inter', sans-serif", fontSize: 30, fontWeight: 900, color: "#fff" }}>94%</span>
                 )}
               </div>
-              <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 16, color: "rgba(0,0,0,0.4)", textAlign: "center" }}>
+              <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 18, fontWeight: 600, color: "rgba(0,0,0,0.65)", textAlign: "center" }}>
                 Actual<br />(top flagged)
               </div>
             </div>
@@ -305,8 +306,8 @@ export const Scene3ImpactRadar = ({ startFrame = 0 }) => {
         textAlign: "right", opacity: interp(lf, [695, 720], [0, 1]),
       }}>
         <div style={{
-          fontFamily: "'Inter', sans-serif", fontSize: 14, fontWeight: 700,
-          color: "rgba(0,0,0,0.35)", letterSpacing: 2, textTransform: "uppercase", marginBottom: 6,
+          fontFamily: "'Inter', sans-serif", fontSize: 16, fontWeight: 700,
+          color: "rgba(0,0,0,0.65)", letterSpacing: 2, textTransform: "uppercase", marginBottom: 6,
         }}>Estimated Exposure</div>
         <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 72, fontWeight: 900, color: COLORS.green, letterSpacing: -1 }}>
           {fmt$(counterVal)}

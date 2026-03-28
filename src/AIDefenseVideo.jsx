@@ -4,7 +4,7 @@ import { Scene2Architecture } from "./scenes/Scene2Architecture";
 import { Scene3ImpactRadar } from "./scenes/Scene3ImpactRadar";
 import { Scene4ClaimSimulator } from "./scenes/Scene4ClaimSimulator";
 import { Scene5RetroEditing } from "./scenes/Scene5RetroEditing";
-import { Scene6ThirdPartyGraph } from "./scenes/Scene6ThirdPartyGraph";
+import { Scene6GILabNetwork } from "./scenes/Scene6GILabNetwork";
 import { Scene7Closing } from "./scenes/Scene7Closing";
 import { SCENES } from "./theme";
 
@@ -56,7 +56,7 @@ export const AIDefenseVideo = () => {
       </SceneWrapper>
 
       <SceneWrapper startFrame={GRAPH.start} endFrame={GRAPH.start + GRAPH.duration}>
-        <Scene6ThirdPartyGraph startFrame={GRAPH.start} />
+        <Scene6GILabNetwork startFrame={GRAPH.start} />
       </SceneWrapper>
 
       <SceneWrapper startFrame={CLOSING.start} endFrame={CLOSING.start + CLOSING.duration}>

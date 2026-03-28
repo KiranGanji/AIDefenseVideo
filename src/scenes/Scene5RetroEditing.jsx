@@ -42,33 +42,16 @@ export const Scene5RetroEditing = ({ startFrame = 0 }) => {
   const gateColor = gateFlip > 0.5 ? COLORS.green : COLORS.red;
   const gateLabel = gateFlip > 0.5 ? "PASS ✓" : "DENY";
 
-  const glitchOp    = interp(lf, [310, 320], [0, 1]) * interp(lf, [330, 348], [1, 0]);
-  const glitchShake = Math.sin(lf * 2.5) * 9 * glitchOp;
-
   const warnOp  = interp(lf, [445, 485], [0, 1]);
   const statsOp = interp(lf, [525, 565], [0, 1]);
 
-  const counterVal = interp(lf, [575, 675], [0, 1100000]);
+  const counterVal = interp(lf, [575, 615], [0, 1100000]);
   const counterOp  = interp(lf, [570, 596], [0, 1]);
 
   return (
     <div style={{
       position: "absolute", inset: 0, background: COLORS.lightBg, overflow: "hidden",
-      transform: `translateX(${glitchShake}px)`,
     }}>
-
-      {/* Glitch overlay */}
-      {glitchOp > 0.01 && (
-        <>
-          <div style={{ position: "absolute", inset: 0, background: `${COLORS.red}18`, pointerEvents: "none", zIndex: 10 }} />
-          <svg style={{ position: "absolute", inset: 0, opacity: glitchOp * 0.55, zIndex: 11, pointerEvents: "none" }} width="1920" height="1080">
-            {[0,1,2,3,4,5].map(i => (
-              <line key={i} x1={i*360-80} y1={0} x2={i*360+240} y2={1080}
-                stroke={COLORS.red} strokeWidth={3.5} strokeOpacity={0.4} />
-            ))}
-          </svg>
-        </>
-      )}
 
       <svg style={{ position: "absolute", inset: 0, opacity: 0.05 }} width="1920" height="1080">
         <defs><pattern id="dg5" width="44" height="44" patternUnits="userSpaceOnUse">
@@ -78,14 +61,15 @@ export const Scene5RetroEditing = ({ startFrame = 0 }) => {
       </svg>
 
       {/* Module pill */}
-      <div style={{ position: "absolute", top: 42, left: 60, opacity: labelOp }}>
+      <div style={{ position: "absolute", top: 38, left: 60, opacity: labelOp }}>
         <div style={{
-          display: "inline-flex", gap: 10, alignItems: "center",
+          display: "inline-flex", gap: 12, alignItems: "center",
           background: COLORS.purpleLight, borderRadius: 100,
-          padding: "8px 22px", border: `2px solid ${COLORS.purple}55`,
+          padding: "14px 32px", border: `2.5px solid ${COLORS.purple}`,
+          boxShadow: `0 4px 18px ${COLORS.purple}33`,
         }}>
-          <div style={{ width: 10, height: 10, borderRadius: "50%", background: COLORS.purple }} />
-          <span style={{ fontFamily: "'Inter', sans-serif", fontSize: 16, fontWeight: 700, color: COLORS.purple }}>
+          <div style={{ width: 14, height: 14, borderRadius: "50%", background: COLORS.purple }} />
+          <span style={{ fontFamily: "'Inter', sans-serif", fontSize: 24, fontWeight: 800, color: COLORS.purple, letterSpacing: 0.5 }}>
             Retro AI Editing
           </span>
         </div>
@@ -116,7 +100,7 @@ export const Scene5RetroEditing = ({ startFrame = 0 }) => {
             <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 22, fontWeight: 800, color: COLORS.textDark }}>
               Reimbursement Policy — Consultation CPT Codes
             </div>
-            <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 15, color: "rgba(0,0,0,0.4)", marginTop: 5 }}>
+            <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 15, color: "rgba(0,0,0,0.62)", marginTop: 5 }}>
               Policy ID: RP-2019-041 · Issued: July 2019
             </div>
           </div>
@@ -128,7 +112,7 @@ export const Scene5RetroEditing = ({ startFrame = 0 }) => {
           ].map((line, i) => (
             <div key={i} style={{
               fontFamily: "'Inter', sans-serif", fontSize: 17,
-              color: line.red ? COLORS.red : "rgba(0,0,0,0.5)",
+              color: line.red ? COLORS.red : "rgba(0,0,0,0.68)",
               fontWeight: i === 2 ? 700 : 400,
               marginBottom: 8,
               borderLeft: i === 2 ? `4px solid ${COLORS.red}` : "none",
@@ -157,7 +141,7 @@ export const Scene5RetroEditing = ({ startFrame = 0 }) => {
 
         {/* Gate checkpoint */}
         <div style={{ opacity: clamp(gateOp, 0, 1), display: "flex", alignItems: "center", gap: 24, marginBottom: 36 }}>
-          <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 18, color: "rgba(0,0,0,0.35)" }}>
+          <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 18, fontWeight: 600, color: "rgba(0,0,0,0.65)" }}>
             Claims flow →
           </div>
           <div style={{
@@ -194,7 +178,7 @@ export const Scene5RetroEditing = ({ startFrame = 0 }) => {
               display: "flex", gap: 12, alignItems: "center",
             }}>
               <span style={{ fontFamily: "'Inter', sans-serif", fontSize: 24, fontWeight: 800, color: c.color }}>{c.val}</span>
-              <span style={{ fontFamily: "'Inter', sans-serif", fontSize: 15, color: "rgba(0,0,0,0.4)" }}>{c.label}</span>
+              <span style={{ fontFamily: "'Inter', sans-serif", fontSize: 15, color: "rgba(0,0,0,0.65)" }}>{c.label}</span>
             </div>
           ))}
         </div>
@@ -203,7 +187,7 @@ export const Scene5RetroEditing = ({ startFrame = 0 }) => {
         <div style={{
           opacity: statsOp,
           fontFamily: "'Inter', sans-serif", fontSize: 19,
-          color: "rgba(0,0,0,0.38)", lineHeight: 1.65, marginBottom: 36,
+          color: "rgba(0,0,0,0.65)", lineHeight: 1.65, marginBottom: 36,
         }}>
           Claims passed automation but consistently violated policy intent —<br />
           exactly the kind of drift AI-assisted billing optimization exploits.
@@ -211,13 +195,13 @@ export const Scene5RetroEditing = ({ startFrame = 0 }) => {
 
         {/* Policy gap breakdown */}
         <div style={{ opacity: statsOp }}>
-          <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 17, fontWeight: 700, color: "rgba(0,0,0,0.3)", letterSpacing: 1.4, textTransform: "uppercase", marginBottom: 18 }}>
+          <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 20, fontWeight: 700, color: "rgba(0,0,0,0.65)", letterSpacing: 1.4, textTransform: "uppercase", marginBottom: 18 }}>
             Why Automation Missed It
           </div>
           {[
             { issue: "Policy loaded at system launch — never re-checked against live edits", icon: "⚠" },
             { issue: "CPT codes structurally valid — rule engine passed on format, not policy", icon: "⚠" },
-            { issue: "5-year drift window — $1.1M in overpayments accumulated undetected", icon: "⚠" },
+            { issue: "$1.1M in overpayments accumulated undetected", icon: "⚠" },
             { issue: "AI retro-scan flagged full cohort in single overnight batch run", icon: "✓" },
           ].map((row, i) => (
             <div key={i} style={{
@@ -232,8 +216,8 @@ export const Scene5RetroEditing = ({ startFrame = 0 }) => {
                 fontSize: 13,
               }}>{row.icon}</div>
               <div style={{
-                fontFamily: "'Inter', sans-serif", fontSize: 16,
-                color: i === 3 ? COLORS.green : "rgba(0,0,0,0.45)",
+                fontFamily: "'Inter', sans-serif", fontSize: 22,
+                color: i === 3 ? COLORS.green : "rgba(0,0,0,0.68)",
                 fontWeight: i === 3 ? 600 : 400, lineHeight: 1.5,
               }}>{row.issue}</div>
             </div>
@@ -259,7 +243,7 @@ export const Scene5RetroEditing = ({ startFrame = 0 }) => {
                 <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 18, fontWeight: 600, color: COLORS.textDark }}>
                   {code}
                 </div>
-                <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 14, color: "rgba(0,0,0,0.35)", marginTop: 3 }}>
+                <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 14, color: "rgba(0,0,0,0.62)", marginTop: 3 }}>
                   2025 · Passed automation
                 </div>
               </div>
@@ -294,7 +278,7 @@ export const Scene5RetroEditing = ({ startFrame = 0 }) => {
               Claims passed automation — violated policy intent
             </div>
             <div style={{
-              fontFamily: "'Inter', sans-serif", fontSize: 17, color: "rgba(0,0,0,0.5)",
+              fontFamily: "'Inter', sans-serif", fontSize: 17, color: "rgba(0,0,0,0.68)",
             }}>
               Exactly the kind of drift AI-assisted billing optimization exploits
             </div>
@@ -309,7 +293,7 @@ export const Scene5RetroEditing = ({ startFrame = 0 }) => {
       }}>
         <div style={{
           fontFamily: "'Inter', sans-serif", fontSize: 14, fontWeight: 700,
-          color: "rgba(0,0,0,0.35)", letterSpacing: 2, textTransform: "uppercase", marginBottom: 6,
+          color: "rgba(0,0,0,0.65)", letterSpacing: 2, textTransform: "uppercase", marginBottom: 6,
         }}>Recovery Opportunity</div>
         <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 72, fontWeight: 900, color: COLORS.purple, letterSpacing: -1 }}>
           {fmt$(counterVal)}

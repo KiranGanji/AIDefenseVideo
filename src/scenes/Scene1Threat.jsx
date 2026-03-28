@@ -160,10 +160,10 @@ export const Scene1Threat = ({ startFrame = 0 }) => {
         opacity: vigOp, pointerEvents: "none",
       }} />
 
-      {/* Text — bottom center */}
+      {/* Text — vertical center */}
       <div style={{
-        position: "absolute", bottom: 110, left: "50%",
-        transform: "translateX(-50%)",
+        position: "absolute", top: "50%", left: "50%",
+        transform: "translate(-50%, -50%)",
         textAlign: "center", width: 1200, pointerEvents: "none",
       }}>
         <div style={{

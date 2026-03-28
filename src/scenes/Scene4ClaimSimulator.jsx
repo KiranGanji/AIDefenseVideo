@@ -43,7 +43,7 @@ export const Scene4ClaimSimulator = ({ startFrame = 0 }) => {
   const gaugeOp      = interp(lf, [420, 460], [0, 1]);
   const needleAngle  = interp(lf, [460, 570], [5, 155]);
   const gaugeLabelOp = interp(lf, [560, 605], [0, 1]);
-  const counterVal   = interp(lf, [620, 720], [0, 1800000]);
+  const counterVal   = interp(lf, [620, 660], [0, 1800000]);
   const counterOp    = interp(lf, [615, 640], [0, 1]);
 
   const needlePct = Math.round(interp(lf, [460, 570], [5, 89]));
@@ -59,14 +59,15 @@ export const Scene4ClaimSimulator = ({ startFrame = 0 }) => {
       </svg>
 
       {/* Module pill */}
-      <div style={{ position: "absolute", top: 42, left: 60, opacity: labelOp }}>
+      <div style={{ position: "absolute", top: 38, left: 60, opacity: labelOp }}>
         <div style={{
-          display: "inline-flex", gap: 10, alignItems: "center",
+          display: "inline-flex", gap: 12, alignItems: "center",
           background: COLORS.amberLight, borderRadius: 100,
-          padding: "8px 22px", border: `2px solid ${COLORS.amber}55`,
+          padding: "14px 32px", border: `2.5px solid ${COLORS.amber}`,
+          boxShadow: `0 4px 18px ${COLORS.amber}33`,
         }}>
-          <div style={{ width: 10, height: 10, borderRadius: "50%", background: COLORS.amber }} />
-          <span style={{ fontFamily: "'Inter', sans-serif", fontSize: 16, fontWeight: 700, color: COLORS.amber }}>
+          <div style={{ width: 14, height: 14, borderRadius: "50%", background: COLORS.amber }} />
+          <span style={{ fontFamily: "'Inter', sans-serif", fontSize: 24, fontWeight: 800, color: COLORS.amber, letterSpacing: 0.5 }}>
             Adversarial Claim Simulator
           </span>
         </div>
@@ -98,7 +99,7 @@ export const Scene4ClaimSimulator = ({ startFrame = 0 }) => {
                 <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 26, fontWeight: 700, color: COLORS.textDark }}>
                   Lab test: base code
                 </div>
-                <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 17, color: "rgba(0,0,0,0.38)", marginTop: 6 }}>
+                <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 17, color: "rgba(0,0,0,0.60)", marginTop: 6 }}>
                   CPT 80053 · Same date · Same patient
                 </div>
               </div>
@@ -126,8 +127,8 @@ export const Scene4ClaimSimulator = ({ startFrame = 0 }) => {
         {showSplit && (
           <div>
             <div style={{
-              fontFamily: "'Inter', sans-serif", fontSize: 20,
-              color: "rgba(0,0,0,0.35)", marginBottom: 18, letterSpacing: 0.2,
+              fontFamily: "'Inter', sans-serif", fontSize: 20, fontWeight: 600,
+              color: "rgba(0,0,0,0.65)", marginBottom: 18, letterSpacing: 0.2,
             }}>
               1 claim → 5 reimbursement lines
             </div>
@@ -179,7 +180,7 @@ export const Scene4ClaimSimulator = ({ startFrame = 0 }) => {
                   display: "flex", gap: 14, alignItems: "center",
                 }}>
                   <span style={{ fontFamily: "'Inter', sans-serif", fontSize: 30, fontWeight: 900, color: c.color }}>{c.val}</span>
-                  <span style={{ fontFamily: "'Inter', sans-serif", fontSize: 16, color: "rgba(0,0,0,0.4)" }}>{c.label}</span>
+                  <span style={{ fontFamily: "'Inter', sans-serif", fontSize: 16, color: "rgba(0,0,0,0.62)" }}>{c.label}</span>
                 </div>
               ))}
             </div>
@@ -187,8 +188,8 @@ export const Scene4ClaimSimulator = ({ startFrame = 0 }) => {
             {/* Context text */}
             <div style={{ marginTop: 32, opacity: contextOp }}>
               <div style={{
-                fontFamily: "'Inter', sans-serif", fontSize: 20,
-                color: "rgba(0,0,0,0.4)", lineHeight: 1.65,
+                fontFamily: "'Inter', sans-serif", fontSize: 30,
+                color: "rgba(0,0,0,0.65)", lineHeight: 1.65,
               }}>
                 Base lab codes paired with modifier-separated add-on lines — same date, same patient, same encounter.
                 This is not random variation. It is systematic unbundling designed to maximize reimbursement.
@@ -210,17 +211,15 @@ export const Scene4ClaimSimulator = ({ startFrame = 0 }) => {
 
         <div style={{ display: "flex", justifyContent: "center", transform: "scale(0.82)", transformOrigin: "top center", marginBottom: -72 }}>
           <svg width={660} height={420} viewBox="0 0 660 420">
-            <path d="M 60 380 A 270 270 0 0 1 600 380"
-              fill="none" stroke="rgba(0,0,0,0.07)" strokeWidth={56} strokeLinecap="round" />
             <path d="M 60 380 A 270 270 0 0 1 262 100"
-              fill="none" stroke={COLORS.green + "55"} strokeWidth={56} strokeLinecap="round" />
+              fill="none" stroke={COLORS.green} strokeWidth={56} strokeLinecap="round" opacity={0.55} />
             <path d="M 262 100 A 270 270 0 0 1 600 380"
-              fill="none" stroke={COLORS.red + "44"} strokeWidth={56} strokeLinecap="round" />
+              fill="none" stroke={COLORS.red} strokeWidth={56} strokeLinecap="round" opacity={0.70} />
 
-            <text x="106" y="324" fontFamily="Inter,sans-serif" fontSize="20" fill="rgba(0,0,0,0.4)" textAnchor="middle">Normal</text>
-            <text x="106" y="348" fontFamily="Inter,sans-serif" fontSize="16" fill="rgba(0,0,0,0.3)" textAnchor="middle">&lt;5%</text>
-            <text x="554" y="324" fontFamily="Inter,sans-serif" fontSize="20" fill={COLORS.red} textAnchor="middle">Danger</text>
-            <text x="554" y="348" fontFamily="Inter,sans-serif" fontSize="16" fill={COLORS.red + "aa"} textAnchor="middle">35–89%</text>
+            <text x="106" y="324" fontFamily="Inter,sans-serif" fontSize="22" fontWeight="700" fill="rgba(0,0,0,0.70)" textAnchor="middle">Normal</text>
+            <text x="106" y="350" fontFamily="Inter,sans-serif" fontSize="18" fontWeight="600" fill="rgba(0,0,0,0.60)" textAnchor="middle">&lt;5%</text>
+            <text x="554" y="324" fontFamily="Inter,sans-serif" fontSize="22" fontWeight="700" fill={COLORS.red} textAnchor="middle">Danger</text>
+            <text x="554" y="350" fontFamily="Inter,sans-serif" fontSize="18" fontWeight="600" fill={COLORS.red} textAnchor="middle">35–89%</text>
 
             <g transform={`rotate(${needleAngle - 90}, 330, 380)`}>
               <line x1={330} y1={380} x2={330} y2={134}
@@ -246,7 +245,7 @@ export const Scene4ClaimSimulator = ({ startFrame = 0 }) => {
             <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 24, fontWeight: 800, color: COLORS.red }}>
               All 5 providers exceed the 99th percentile
             </div>
-            <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 17, color: "rgba(0,0,0,0.45)", marginTop: 6 }}>
+            <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 17, color: "rgba(0,0,0,0.65)", marginTop: 6 }}>
               Same date · Same patient · Same encounter
             </div>
           </div>
@@ -254,7 +253,7 @@ export const Scene4ClaimSimulator = ({ startFrame = 0 }) => {
 
         {/* Provider breakdown table */}
         <div style={{ opacity: gaugeLabelOp, marginTop: 28, paddingLeft: 24, paddingRight: 24 }}>
-          <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 17, fontWeight: 700, color: "rgba(0,0,0,0.35)", letterSpacing: 1.5, textTransform: "uppercase", marginBottom: 14 }}>
+          <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 17, fontWeight: 700, color: "rgba(0,0,0,0.65)", letterSpacing: 1.5, textTransform: "uppercase", marginBottom: 14 }}>
             Modifier Rate by Provider
           </div>
           {[
@@ -265,12 +264,12 @@ export const Scene4ClaimSimulator = ({ startFrame = 0 }) => {
             { id: "Lab E", rate: 68, lines: "5,900" },
           ].map((row) => (
             <div key={row.id} style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 9 }}>
-              <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 15, fontWeight: 700, color: "rgba(0,0,0,0.45)", width: 52 }}>{row.id}</div>
+              <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 15, fontWeight: 700, color: "rgba(0,0,0,0.70)", width: 52 }}>{row.id}</div>
               <div style={{ flex: 1, height: 18, background: "rgba(0,0,0,0.06)", borderRadius: 6, overflow: "hidden" }}>
                 <div style={{ width: `${row.rate}%`, height: "100%", background: COLORS.red, borderRadius: 6, opacity: 0.72 }} />
               </div>
               <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 15, fontWeight: 800, color: COLORS.red, width: 40, textAlign: "right" }}>{row.rate}%</div>
-              <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 14, color: "rgba(0,0,0,0.3)", width: 72, textAlign: "right" }}>{row.lines} lines</div>
+              <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 14, color: "rgba(0,0,0,0.58)", width: 72, textAlign: "right" }}>{row.lines} lines</div>
             </div>
           ))}
         </div>
@@ -279,7 +278,7 @@ export const Scene4ClaimSimulator = ({ startFrame = 0 }) => {
         <div style={{ marginTop: 32, paddingLeft: 24, textAlign: "right", opacity: counterOp }}>
           <div style={{
             fontFamily: "'Inter', sans-serif", fontSize: 14, fontWeight: 700,
-            color: "rgba(0,0,0,0.35)", letterSpacing: 2, textTransform: "uppercase", marginBottom: 6,
+            color: "rgba(0,0,0,0.65)", letterSpacing: 2, textTransform: "uppercase", marginBottom: 6,
           }}>Estimated Exposure</div>
           <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 72, fontWeight: 900, color: COLORS.amber, letterSpacing: -1 }}>
             {fmt$(counterVal)}
