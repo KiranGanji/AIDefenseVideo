@@ -32,8 +32,8 @@ export const SCENES = {
   THREAT:    { start: 0,    duration: 660  }, // 0:00–0:22
   ARCH:      { start: 660,  duration: 690  }, // 0:22–0:45
   RADAR:     { start: 1350, duration: 900  }, // 0:45–1:15
-  SIMULATOR: { start: 2250, duration: 750  }, // 1:15–1:40
-  RETRO:     { start: 3000, duration: 750  }, // 1:40–2:05
-  GRAPH:     { start: 3750, duration: 900  }, // 2:05–2:35
-  CLOSING:   { start: 4650, duration: 1050 }, // 2:35–3:10
+  SIMULATOR: { start: 2250, duration: 1050 }, // 1:15–1:50
+  RETRO:     { start: 3300, duration: 750  }, // 1:50–2:15
+  GRAPH:     { start: 4050, duration: 900  }, // 2:15–2:45
+  CLOSING:   { start: 4950, duration: 1050 }, // 2:45–3:20
 };
