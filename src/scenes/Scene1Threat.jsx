@@ -73,10 +73,10 @@ export const Scene1Threat = ({ startFrame = 0 }) => {
   // Ambient pulse for red nodes
   const redPulse = 1 + Math.sin(lf * 0.1) * 0.15;
 
-  // Text fade-in at ~frame 380
-  const line1Op = interp(lf, [370, 410], [0, 1]);
-  const line2Op = interp(lf, [420, 460], [0, 1]);
-  const line2Scale = interp(lf, [420, 480], [0.85, 1]);
+  // Text fade-in immediately with the dots
+  const line1Op = interp(lf, [10, 45], [0, 1]);
+  const line2Op = interp(lf, [55, 90], [0, 1]);
+  const line2Scale = interp(lf, [55, 115], [0.85, 1]);
 
   // Vignette overlay
   const vigOp = interp(lf, [0, 40], [0, 0.5]);
