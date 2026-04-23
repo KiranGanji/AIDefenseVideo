@@ -232,7 +232,7 @@ export const Scene2ArchitectureV2 = ({ startFrame = 0 }) => {
         }}>
           <div style={{ width: 12, height: 12, borderRadius: "50%", background: COLORS.green }} />
           <span style={{ fontFamily: "'Inter', sans-serif", fontSize: 22, fontWeight: 600, color: COLORS.green }}>
-            <span style={{ fontSize: 38, fontWeight: 900, letterSpacing: -1 }}>$50M+</span>
+            <span style={{ fontSize: 38, fontWeight: 900, letterSpacing: -1 }}>$30M+</span>
             {" "}combined exposure opportunity identified across portfolio
           </span>
         </div>
