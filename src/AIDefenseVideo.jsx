@@ -1,6 +1,7 @@
 import { AbsoluteFill, interpolate, useCurrentFrame } from "remotion";
 import { Scene1Threat } from "./scenes/Scene1Threat";
-import { Scene2Architecture } from "./scenes/Scene2Architecture";
+// Scene2Architecture preserved as-is (original $20M script)
+import { Scene2ArchitectureV2 } from "./scenes/Scene2ArchitectureV2";
 import { Scene3ImpactRadar } from "./scenes/Scene3ImpactRadar";
 import { Scene4ClaimSimulator } from "./scenes/Scene4ClaimSimulator";
 import { Scene5RetroEditing } from "./scenes/Scene5RetroEditing";
@@ -44,7 +45,7 @@ export const AIDefenseVideo = () => {
       </SceneWrapper>
 
       <SceneWrapper startFrame={ARCH.start} endFrame={ARCH.start + ARCH.duration}>
-        <Scene2Architecture startFrame={ARCH.start} />
+        <Scene2ArchitectureV2 startFrame={ARCH.start} />
       </SceneWrapper>
 
       <SceneWrapper startFrame={RADAR.start} endFrame={RADAR.start + RADAR.duration}>
