@@ -1,14 +1,9 @@
 import { AbsoluteFill, interpolate, useCurrentFrame } from "remotion";
 import { Scene1Threat } from "./scenes/Scene1Threat";
-// Scene2Architecture preserved as-is (original $20M script)
 import { Scene2ArchitectureV2 } from "./scenes/Scene2ArchitectureV2";
 import { Scene3ImpactRadar } from "./scenes/Scene3ImpactRadar";
 import { Scene4ClaimSimulator } from "./scenes/Scene4ClaimSimulator";
 import { Scene5RetroEditing } from "./scenes/Scene5RetroEditing";
-// Scene 6 v1 (GI Lab Network) — removed from flow, file preserved
-// import { Scene6GILabNetwork } from "./scenes/Scene6GILabNetwork";
-// Scene 6 v2 (Third Party Graph) — removed from flow, file preserved
-// import { Scene6ThirdPartyGraph } from "./scenes/Scene6ThirdPartyGraph";
 import { Scene6DataGraph } from "./scenes/Scene6DataGraph";
 import { Scene7Closing } from "./scenes/Scene7Closing";
 import { SCENES } from "./theme";
