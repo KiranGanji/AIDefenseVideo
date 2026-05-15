@@ -6,4 +6,4 @@ npx remotion render src/index.jsx AIDefenseVideo out/video_v2.mp4 --muted
 
 
 ## Render only part of the video
-npx remotion render src/index.jsx AIDefenseVideo out/thirdparty.mp4 --frames=3750-4649 --muted
+npx remotion render src/index.jsx AIDefenseVideo out/retroai.mp4 --frames=1711-2071 --muted

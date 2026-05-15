@@ -1,0 +1,13 @@
+AI Defense - Built to detect what traditional systems miss
+
+The threat is no longer isolated. It is structural. Providers and revenue cycle partners are using AI to reverse-engineer payer policies and optimize coding at scale - driving higher medical cost and lower affordability.
+
+AI Defense is our response: a modular capability suite built across Policy and Benefit , Claims, Network, and Clinical Intelligences, along with state of art Agentic Orchestration - all connected through a modular architecture designed for secure, auditable execution.
+
+We've built 4 Signal Agents. Provider Coding Intensity Signal Agents such as Impact Radar, Adversarial Claim Simulator and Third Party Graph identify provider reimbursement-maximizing tactics before they scale. Retro AI Editing is capturing affordability optimization opportunities identifying smaller aberrant claims at a scale and speed traditional post pay analytics cannot.
+
+Across the portfolio, we have already identified over 30 million dollars in combined exposure opportunity - and that number is growing as each module matures.
+
+Each module then turns that strategy into action: Impact Radar flags abnormal provider behavior early, Adversarial Claim Simulator anticipates reimbursement-maximizing tactics before they spread, Retro AI Editing translates policy into machine-executable checks that catch payment drift at scale and Third Party Graph exposes hidden provider and vendor connections. 
+
+Together, AI Defense is a coordinated defense system built to detect earlier, reason deeper, and act faster as the market evolves.

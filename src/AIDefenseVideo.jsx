@@ -1,10 +1,7 @@
 import { AbsoluteFill, interpolate, useCurrentFrame } from "remotion";
 import { Scene1Threat } from "./scenes/Scene1Threat";
 import { Scene2ArchitectureV2 } from "./scenes/Scene2ArchitectureV2";
-import { Scene3ImpactRadar } from "./scenes/Scene3ImpactRadar";
-import { Scene4ClaimSimulator } from "./scenes/Scene4ClaimSimulator";
-import { Scene5RetroEditing } from "./scenes/Scene5RetroEditing";
-import { Scene6DataGraph } from "./scenes/Scene6DataGraph";
+import { CombinedScene } from "./scenes/combinedscene";
 import { Scene7Closing } from "./scenes/Scene7Closing";
 import { SCENES } from "./theme";
 
@@ -31,7 +28,8 @@ const SceneWrapper = ({ children, startFrame, endFrame }) => {
 
 export const AIDefenseVideo = () => {
   const frame = useCurrentFrame();
-  const { THREAT, ARCH, RADAR, SIMULATOR, RETRO, GRAPH, CLOSING } = SCENES;
+  const { THREAT, ARCH, COMBINED, CLOSING } = SCENES;
+  const sceneList = Object.values(SCENES);
 
   return (
     <AbsoluteFill style={{ fontFamily: "'Inter', 'Helvetica Neue', Arial, sans-serif" }}>
@@ -43,20 +41,8 @@ export const AIDefenseVideo = () => {
         <Scene2ArchitectureV2 startFrame={ARCH.start} />
       </SceneWrapper>
 
-      <SceneWrapper startFrame={RADAR.start} endFrame={RADAR.start + RADAR.duration}>
-        <Scene3ImpactRadar startFrame={RADAR.start} />
-      </SceneWrapper>
-
-      <SceneWrapper startFrame={SIMULATOR.start} endFrame={SIMULATOR.start + SIMULATOR.duration}>
-        <Scene4ClaimSimulator startFrame={SIMULATOR.start} />
-      </SceneWrapper>
-
-      <SceneWrapper startFrame={RETRO.start} endFrame={RETRO.start + RETRO.duration}>
-        <Scene5RetroEditing startFrame={RETRO.start} />
-      </SceneWrapper>
-
-      <SceneWrapper startFrame={GRAPH.start} endFrame={GRAPH.start + GRAPH.duration}>
-        <Scene6DataGraph startFrame={GRAPH.start} />
+      <SceneWrapper startFrame={COMBINED.start} endFrame={COMBINED.start + COMBINED.duration}>
+        <CombinedScene startFrame={COMBINED.start} />
       </SceneWrapper>
 
       <SceneWrapper startFrame={CLOSING.start} endFrame={CLOSING.start + CLOSING.duration}>
@@ -69,10 +55,10 @@ export const AIDefenseVideo = () => {
         transform: "translateX(-50%)",
         display: "flex", gap: 8, opacity: 0.5, pointerEvents: "none",
       }}>
-        {Object.values(SCENES).map((scene, i) => {
+        {sceneList.map((scene, i) => {
           const isActive = frame >= scene.start && frame < scene.start + scene.duration;
           const isPast = frame >= scene.start + scene.duration;
-          const isLight = i >= 1 && i <= 5;
+          const isLight = i > 0 && i < sceneList.length - 1;
           return (
             <div key={i} style={{
               width: isActive ? 24 : 6, height: 4, borderRadius: 2,
