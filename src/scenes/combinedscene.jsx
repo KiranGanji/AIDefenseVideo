@@ -64,12 +64,35 @@ const GRAPH_EDGES = [
   [1, 2], [2, 9], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8],
 ];
 
-const panelShell = (accent, surface) => ({
+const PANEL_THEMES = {
+  radar: {
+    accent: COLORS.green,
+    surface: "linear-gradient(160deg, #F4FFE7 0%, #E7F7CB 58%, #D9EEB5 100%)",
+    shadow: "rgba(74, 143, 42, 0.18)",
+  },
+  simulator: {
+    accent: COLORS.amber,
+    surface: "linear-gradient(160deg, #FFF4D8 0%, #FFEAB7 58%, #FDDD93 100%)",
+    shadow: "rgba(217, 119, 6, 0.18)",
+  },
+  retro: {
+    accent: COLORS.purple,
+    surface: "linear-gradient(160deg, #F5F0FF 0%, #E9DFFF 58%, #D9CBFF 100%)",
+    shadow: "rgba(91, 79, 207, 0.18)",
+  },
+  graph: {
+    accent: COLORS.teal,
+    surface: "linear-gradient(160deg, #E8FFF7 0%, #D4F8EB 58%, #BDEFD9 100%)",
+    shadow: "rgba(13, 148, 112, 0.18)",
+  },
+};
+
+const panelShell = ({ accent, surface, shadow }) => ({
   position: "absolute",
   borderRadius: 28,
-  border: `2px solid ${accent}22`,
-  background: `linear-gradient(180deg, ${surface} 0%, #FFFFFF 100%)`,
-  boxShadow: "0 24px 60px rgba(15, 23, 42, 0.08)",
+  border: `2px solid ${accent}44`,
+  background: surface,
+  boxShadow: `0 24px 60px rgba(15, 23, 42, 0.10), 0 10px 28px ${shadow}, inset 0 1px 0 rgba(255,255,255,0.55)`,
   overflow: "hidden",
 });
 
@@ -224,7 +247,7 @@ export const CombinedScene = ({ startFrame = 0 }) => {
           return (
             <div
               style={{
-                ...panelShell(COLORS.green, COLORS.greenLight),
+                ...panelShell(PANEL_THEMES.radar),
                 left: 0,
                 top: 0,
                 width: 886,
@@ -309,7 +332,7 @@ export const CombinedScene = ({ startFrame = 0 }) => {
           return (
             <div
               style={{
-                ...panelShell(COLORS.amber, COLORS.amberLight),
+                ...panelShell(PANEL_THEMES.simulator),
                 left: 914,
                 top: 0,
                 width: 886,
@@ -364,7 +387,7 @@ export const CombinedScene = ({ startFrame = 0 }) => {
           return (
             <div
               style={{
-                ...panelShell(COLORS.purple, COLORS.purpleLight),
+                ...panelShell(PANEL_THEMES.retro),
                 left: 0,
                 top: 394,
                 width: 886,
@@ -466,7 +489,7 @@ export const CombinedScene = ({ startFrame = 0 }) => {
           return (
             <div
               style={{
-                ...panelShell(COLORS.teal, COLORS.tealLight),
+                ...panelShell(PANEL_THEMES.graph),
                 left: 914,
                 top: 394,
                 width: 886,
